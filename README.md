@@ -1,6 +1,6 @@
 # T3tris
 
-Un projet React moderne utilisant :
+A modern React project using:
 
 - TypeScript
 - Vite
@@ -9,23 +9,23 @@ Un projet React moderne utilisant :
 - React Router
 - React Query
 
-## Développement
+## Development
 
-Pour lancer le projet en mode développement :
+To start the project in development mode:
 
 ```bash
 bun install
 bun dev
 ```
 
-Le serveur sera accessible à l'adresse http://localhost:8080
+The server will be available at http://localhost:8080
 
 ## Build
 
-Pour construire le projet pour la production :
+To build the project for production:
 
 ```bash
 bun run build
 ```
 
-Les fichiers de build seront générés dans le dossier `dist/`.
+Build files will be generated in the `dist/` directory.
