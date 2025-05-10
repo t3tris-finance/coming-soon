@@ -24,6 +24,7 @@ const Index = () => {
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
 
   useEffect(() => {
+    // Fetch the user's IP address
     const fetchIp = async () => {
       try {
         const response = await fetch("https://api.ipify.org?format=json");
@@ -41,7 +42,7 @@ const Index = () => {
     };
     fetchIp();
 
-    // Create hidden iframe
+    // Create hidden iframe for form submission
     const iframe = document.createElement("iframe");
     iframe.name = "hidden_iframe";
     iframe.style.display = "none";
@@ -90,14 +91,14 @@ const Index = () => {
 
     setIsSubmitting(true);
 
-    // Create invisible form
+    // Create invisible form for submission
     const form = document.createElement("form");
     form.method = "POST";
     form.action = GOOGLE_SCRIPT_URL;
     form.target = "hidden_iframe";
     form.style.display = "none";
 
-    // Add hidden fields
+    // Add hidden fields to the form
     const addField = (name: string, value: string) => {
       const input = document.createElement("input");
       input.type = "hidden";
