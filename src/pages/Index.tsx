@@ -17,6 +17,7 @@ if (!GOOGLE_SCRIPT_URL || !SECRET_KEY) {
 const Index = () => {
   const { toast } = useToast();
   const [email, setEmail] = useState("");
+  const [wallet, setWallet] = useState("");
   const [ipAddress, setIpAddress] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
@@ -106,6 +107,7 @@ const Index = () => {
     };
 
     addField("email", email);
+    if (wallet) addField("wallet", wallet);
     addField("ip", ipAddress || "Not retrieved");
     addField("secretKey", SECRET_KEY);
 
@@ -121,6 +123,7 @@ const Index = () => {
     });
 
     setEmail("");
+    setWallet("");
     setIsSubmitting(false);
   };
 
@@ -135,22 +138,32 @@ const Index = () => {
 
         <div className="space-y-2">
           <p className="text-sm text-gray-400">Get notified when we launch</p>
-          <form onSubmit={handleSubscribe} className="flex space-x-2">
+          <form onSubmit={handleSubscribe} className="flex flex-col space-y-2">
+            <div className="flex space-x-2">
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="bg-gray-900 border-gray-800 flex-1"
+                disabled={isSubmitting}
+              />
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="bg-white text-black hover:bg-gray-200 transition-colors"
+              >
+                {isSubmitting ? "Submitting..." : "Notify Me"}
+              </Button>
+            </div>
             <Input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              type="text"
+              placeholder="Wallet address or ENS (optional)"
+              value={wallet}
+              onChange={(e) => setWallet(e.target.value)}
               className="bg-gray-900 border-gray-800"
               disabled={isSubmitting}
             />
-            <Button
-              type="submit"
-              disabled={isSubmitting}
-              className="bg-white text-black hover:bg-gray-200 transition-colors"
-            >
-              {isSubmitting ? "Submitting..." : "Notify Me"}
-            </Button>
           </form>
         </div>
       </div>
