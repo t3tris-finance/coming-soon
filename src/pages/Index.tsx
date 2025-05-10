@@ -135,6 +135,9 @@ const Index = () => {
           <h1 className="text-4xl sm:text-6xl font-bold tracking-tighter animate-fade-in">
             Coming Soon.
           </h1>
+          <p className="text-sm text-gray-500 font-light">
+            We put investors and asset managers in touch with each other.
+          </p>
         </div>
 
         <div className="space-y-2">
