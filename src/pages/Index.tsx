@@ -130,17 +130,18 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white p-4">
-      <div className="w-full max-w-md text-center space-y-8">
+      <div className="w-full max-w-xl text-center space-y-8">
         <div className="space-y-2">
           <h1 className="text-4xl sm:text-6xl font-bold tracking-tighter animate-fade-in">
             Coming Soon.
           </h1>
           <p className="text-sm text-gray-500 font-light">
-            We put investors and asset managers in touch with each other.
+            We put liquidity providers and asset managers in touch with each
+            other.
           </p>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-2 max-w-sm mx-auto">
           <p className="text-sm text-gray-400">Get notified when we launch</p>
           <form onSubmit={handleSubscribe} className="flex flex-col space-y-2">
             <div className="flex space-x-2">
