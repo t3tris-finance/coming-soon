@@ -142,7 +142,7 @@ const Index = () => {
         </div>
 
         <div className="space-y-2 max-w-sm mx-auto">
-          <p className="text-sm text-gray-400">Get notified when we launch</p>
+          {/* <p className="text-sm text-gray-400">Get notified when we launch</p> */}
           <form onSubmit={handleSubscribe} className="flex flex-col space-y-2">
             <div className="flex space-x-2">
               <Input
