@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/components/ui/use-toast";
+import { useEffect, useRef, useState } from "react";
 
 // Environment variables
 const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
@@ -130,15 +130,15 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white p-4">
-      <div className="w-full max-w-xl text-center space-y-8">
+      <div className="w-full text-center space-y-8 flex-1 flex flex-col justify-center items-center">
         <div className="space-y-2">
-          <h1 className="text-4xl sm:text-6xl font-bold tracking-tighter animate-fade-in">
-            Coming Soon.
+          <h1 className="text-4xl sm:text-6xl font-bold tracking-tighter animate-fade-in w-full whitespace-nowrap">
+            Finance, Block by Block.
           </h1>
-          <p className="text-sm text-gray-500 font-light">
+          {/* <p className="text-sm text-gray-500 font-light">
             We put liquidity providers and asset managers in touch with each
             other.
-          </p>
+          </p> */}
         </div>
 
         <div className="space-y-2 max-w-sm mx-auto">
@@ -150,7 +150,7 @@ const Index = () => {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-gray-900 border-gray-800 flex-1"
+                className="bg-gray-900 border-gray-800 flex-1 w-72 min-w-0"
                 disabled={isSubmitting}
               />
               <Button
@@ -172,6 +172,9 @@ const Index = () => {
           </form>
         </div>
       </div>
+      <footer className="w-full mt-auto text-center text-xs text-gray-500">
+        © 2025 t3tris. All rights reserved.
+      </footer>
     </div>
   );
 };
